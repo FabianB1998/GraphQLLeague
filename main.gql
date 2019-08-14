@@ -1,0 +1,42 @@
+enum Champion{
+    MonkeyKing
+    Azir
+}
+
+interface IGameObject {
+    currentHealth: Int!
+    maxHealth: Int!
+    currentMana: Int!
+    maxMana: Int!
+    spells: [Spell!]
+    level: Int!
+}
+
+type Spell{
+    cooldown: Int
+    name: String
+}
+
+type GameObjects{
+    players: [IGameObject!]
+    minions: [IGameObject!]
+    all: [IGameObject!]
+}
+
+type Player implements IGameObject{
+    currentHealth: Int!
+    maxHealth: Int!
+    currentMana: Int!
+    maxMana: Int!
+    spells: [Spell!]
+    level: Int!
+}
+
+type Minion implements IGameObject{
+    currentHealth: Int!
+    maxHealth: Int!
+    currentMana: Int!
+    maxMana: Int!
+    spells: [Spell!]
+    level: Int!
+}
